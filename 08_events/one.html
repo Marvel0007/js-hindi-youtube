@@ -7,7 +7,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    
+    <div id='images'>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </div>
 </body>
 <script>
     
@@ -17,10 +23,31 @@
     // clientX, clientY, screenX, screenY
     // altKey, ctrlKey, shiftKey, keyCode
 
-    document.getElementById('owl').addEventListener('click', function(e){
-        console.log(e);
-    }, false)
+    // document.getElementById('images').addEventListener('click', function(e){
+    //     console.log("clicked inside in ul");
+    // }, false)
+
+    // document.getElementById('owl').addEventListener('click', function(e){
+    //     console.log("clicked owl");
+    //     e.stopPropagation();
+    // }, false)
+
+    // document.getElementById('google').addEventListener('click', function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation();
+    //     console.log("Google Clicked");
+    // }, false)
     
+    document.querySelector('#images').addEventListener('click', function(e){
+        console.log(e.target.parentNode);
+        if(e.target.tagName === 'IMG'){
+            console.log(e.target.id);
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+        }
+
+        
+    })
 
 </script>
 </html>
